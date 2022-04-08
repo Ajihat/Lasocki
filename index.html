@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style type="text/css">@font-face{font-family:"Univers LT W05_55 Roman";src:url("https://ccc-frontend.github.io/fonts/fonts/7b452431-e4a6-48a8-8ba1-c6300f9384df.woff2") format("woff2");font-weight:normal;font-display:swap}.header{width:var(--viewportWidth);display:flex;flex-direction:column;align-items:center}.header__wrapper{width:100%;position:relative}.header__image{width:100%;height:auto;display:block}.header__video{width:100%;display:block}.header__audio-btn{position:absolute;width:3vw;height:3vw;min-height:25px;min-width:25px;border-radius:50%;background-color:#fff;bottom:3%;left:3%;cursor:pointer}.header__audio-btn-icon-off,.header__audio-btn-icon-on{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);width:60%;display:block;height:100%;opacity:1}.header__audio-btn-icon-on{opacity:0}.button{width:100%;text-align:center;display:flex;justify-content:center;align-items:center;font-family:"Univers LT W05_55 Roman",sans-serif;letter-spacing:.05em;margin-top:-50px}@media(max-width: 764px){.button{margin-top:0}}.button__link{display:block;padding:15px 60px;font-size:12px;line-height:1.1;border-radius:0;border:1px solid #000;color:#fff !important;background-color:#000;text-transform:uppercase;text-decoration:none;margin:0 0 30px;transition:.2s}@media(max-width: 455px){.button__link{font-size:11px;padding:12px 50px}}.button__link:hover{color:#000 !important;background-color:#fff}.button__link--outlined{color:#000;background-color:transparent}.button__link--outlined:hover{color:transparent;background-color:#000}.button__link-underlined{font-size:12px;color:#000;line-height:1.1;text-transform:uppercase;text-decoration:none;letter-spacing:.02em;margin:0 0 30px;border-bottom:1px solid #000}.gallery{width:100%;text-align:left;display:flex;flex-wrap:wrap;justify-content:space-between}@media(max-width: 1300px){.gallery{justify-content:space-around}}@media(max-width: 455px){.gallery{width:100vw}}.gallery--fullscreen{width:var(--viewportWidth)}.gallery--center{justify-content:center;padding:160px 0 160px 0}@media(max-width: 764px){.gallery--center{padding:50px 0 90px 0}}@media(max-width: 455px){.gallery--center{padding:0 0 50px 0}}.gallery__item{display:flex;flex-direction:column;justify-content:flex-start;width:100%;position:relative}@media(max-width: 1300px){.gallery__item--xl .gallery__header{margin-left:4px}}.gallery__item--l{width:50%}@media(max-width: 455px){.gallery__item--l{width:100%}.gallery__item--l .gallery__header{margin-left:4px}}.gallery__item--m{width:50%}.gallery__item--m:first-child .gallery__header{margin-left:4px}.gallery__item--s{width:42%}@media(max-width: 764px){.gallery__item--s{width:50%}.gallery__item--s:first-child .gallery__header{margin-left:4px}}.gallery__item--xs{width:24%}@media(max-width: 764px){.gallery__item--xs{width:50%}.gallery__item--xs:first-child{margin-bottom:50px}.gallery__item--xs:nth-child(odd) .gallery__header{margin-left:4px}}.gallery__wrapper{position:relative}.gallery__image{display:block;width:100%;height:auto}.gallery__header{position:relative;width:90%;margin-left:2px}.gallery__info{position:absolute;left:0;top:6px;font-size:10px;font-weight:normal;letter-spacing:0;text-transform:uppercase}@media(max-width: 455px){.gallery__info{font-size:9px}}.gallery__title{font-size:14px;font-weight:normal;padding:0;margin:25px 0 0 0}@media(max-width: 455px){.gallery__title{font-size:12px;line-height:1.2}}.gallery__cta{font-size:13px;font-weight:normal;text-transform:uppercase;margin:3px 0 0 0;color:#000}@media(max-width: 455px){.gallery__cta{font-size:11px;margin:0}}.gallery__link{display:block;text-decoration:none;color:inherit}.gallery.pink{background-color:#e19eb0}@media(max-width: 455px){.gallery.pink{background-color:#c0bdaa}}.gallery.green{background-color:#c0bdaa}.gallery.four{padding:160px 0 160px 0;max-width:1300px;margin:0 auto}@media(max-width: 764px){.gallery.four{padding:50px 0 0 0}}@media(max-width: 764px){.gallery.four.bottom{padding-bottom:50px}}@media(max-width: 455px){.gallery.four.bottom{padding-top:0px}}.gallery.yellow{padding:160px 0 160px 0;background-color:#f4e858;max-width:1300px;margin:0 auto}@media(max-width: 764px){.gallery.yellow{padding:50px 0 50px 0}}.wrapper-yellow{background-color:#f4e858;width:100%}.wrapper{position:relative;background-color:#c0bdaa;width:100%}@media(max-width: 764px){.gallery__item.yellow{background-color:#f4e858}}.gallery.big-yellow{background-color:#1e4238}@media(max-width: 764px){.gallery.big-yellow{background-color:#f4e858;padding-bottom:50px}}.gallery__header.text-white,.gallery__title.text-white,.gallery__info.text-white,.gallery__cta.text-white{color:#fff}@media(max-width: 764px){.gallery__header.text-white,.gallery__title.text-white,.gallery__info.text-white,.gallery__cta.text-white{color:#000}}.gallery.big{max-width:1300px;margin:0 auto;background-color:#1e4238}@media(max-width: 764px){.gallery.big{padding:0 0 50px 0}}.wrapper-big{background-color:#1e4238;width:100%}.gallery.normal{padding-bottom:160px}@media(max-width: 764px){.gallery.normal{padding-bottom:50px}}.paragraph{text-align:center;display:flex;justify-content:center;align-items:center;width:100%;padding:160px 0px 0px 0px}@media(max-width: 764px){.paragraph{padding:50px 0px 0px 0px}}@media(max-width: 455px){.paragraph{padding:50px 0 50px 0}}.paragraph__span{max-width:80%;font-size:15px}@media(max-width: 764px){.paragraph__span{max-width:85%;padding:40px 0}}@media(max-width: 455px){.paragraph__span{font-size:13px}}.paragraph.pink{background-color:#e19eb0}.paragraph.yellow{background-color:#f4e858}@media(max-width: 455px){.paragraph.yellow{padding:50px 0 0px 0}}.product{position:absolute;top:50%;left:50%;width:38px;height:38px;display:flex;justify-content:center;align-items:center;transform:translate(-50%, -50%);transition:.8s cubic-bezier(0.175, 0.885, 0.32, 1.275)}.product--before{opacity:0;transform:translate(-50%, -50%) scale(0)}.product:hover{z-index:20}.product:hover .product__circle{transform:scale(1.1)}.product:hover .product__link{display:flex;flex-direction:column;z-index:20;padding:5px}.product:focus{outline:none;z-index:10}.product:focus .product__circle{transform:scale(1.1)}.product:focus .product__link{display:flex;z-index:10}.product__circle{width:22px;height:22px;border-radius:50%;background-color:#fff;position:relative;transition:.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);-webkit-animation:active-dot 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);animation:active-dot 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275)}@media(max-width: 455px){.product__circle{width:20px;height:20px}}.product__link{position:absolute;top:38px;left:-50%;z-index:100;color:#000;background-color:#fff;font-size:12px;text-decoration:none;display:none;overflow:hidden}.product__link--left{left:auto;right:2px}.product__link--top{top:auto;bottom:38px}.product__text-wrapper{width:100%;display:flex;min-width:100px;flex-direction:column;padding:7px 10px 9px;text-align:center}.product__title{min-width:110px;color:#000;text-align:left}.product__price{color:#000;font-size:12px;text-align:left}@media(max-width: 455px){.product__price{font-size:12px}}.product__cta{text-decoration:underline;color:#000;text-align:left}@-webkit-keyframes active-dot{from{transform:scale(0.1)}to{transform:scale(1)}}@keyframes active-dot{from{transform:scale(0.1)}to{transform:scale(1)}}.text{position:relative;width:100%;height:120px;background-color:#fff;overflow-x:hidden}.text__paragraph{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);font-size:40px;text-transform:uppercase;white-space:nowrap;margin:0}@media(max-width: 764px){.text{display:none}}.text-vertical{position:absolute;top:0px;bottom:0px;width:70px;background-color:#fff;overflow:hidden}@media(max-width: 764px){.text-vertical{display:none}}.text-vertical__paragraph{text-transform:uppercase;position:absolute;transform:translate(-50%, 0) rotate(-90deg);white-space:nowrap;bottom:350px;left:47%;font-size:30px}body{width:100%;margin:0;overflow-x:hidden;--viewportWidth: calc(100vw - var(--scrollbarWidth))}.c-content{padding:0 0 20px}.c-headline{display:none}.c-layout_row.c-layout_item.is-breadcrumb.is-container{display:none}@media screen and (min-width: 980px){.c-layout_col.is-content,.c-layout_row.is-content{width:100%;float:none}}.c-layout_col.c-layout_item.is-sidebar{display:none}.main{color:#000;font-family:"Univers LT W05_55 Roman",sans-serif;font-size:14px;line-height:1.4;font-weight:normal;letter-spacing:-0.008em;min-width:320px;margin:0 auto;display:flex;align-items:center;justify-content:center;flex-direction:column;padding:0 0 80px 0;grid-gap:0px;gap:0px;box-sizing:border-box}@media(max-width: 764px){.main{padding:0 0 25px 0;grid-gap:0px;gap:0px}}.main *,.main *:before,.main *:after{box-sizing:inherit}
+</style></head>
+  <body>
+    <div class="main">
+      <div class="header">
+        <div class="header__wrapper">
+          <div style="padding: 56.25% 0 0 0; position: relative">
+            <iframe
+              src="https://player.vimeo.com/video/696873502?h=b5a4ef7748&background=1"
+              frameborder="0"
+              loop="1"
+              autoplay="1"
+              allow="autoplay"
+              class="main-video--js"
+              style="
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+              "
+              title="CCC video"
+            ></iframe>
+          </div>
+
+          <div class="header__audio-btn">
+            <img
+              class="header__audio-btn-icon-off"
+              src="images/audio-off.00b809c5.svg"
+              alt=""
+            />
+            <img
+              class="header__audio-btn-icon-on"
+              src="images/audio-on.e2dc5cd4.svg"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+      <div class="wrapper">
+        <div class="paragraph pink">
+          <span class="paragraph__span">
+            Niezależnie od tego, jak spędzasz wolny czas z najbliższymi i jaka
+            panuje obecnie pora roku, nowa kapsuła Lasocki City Leisure z
+            pewnością dotrzyma Ci kroku. Przygodę z nią zaczynamy w Kopenhadze,
+            w ramach konceptu „24 godziny w…” z rodziną modelki i influencerki
+            Caroline Bille Brahe. A duńska stolica to dopiero pierwszy
+            przystanek w tej kampanii!
+          </span>
+        </div>
+
+        <div class="gallery gallery--center pink">
+          <div class="gallery__item gallery__item--l gallery__item--js">
+            <div class="gallery__wrapper gallery__wrapper--js">
+              <a href="#" class="gallery__link">
+                <picture>
+                  <source
+                    srcset="images/photo-desktop-960x1229.826ced83.jpg"
+                    media="(min-width: 455px)"
+                  />
+                  <img
+                    class="gallery__image"
+                    src="images/photo-mobile-764x980.7e9a20ce.jpg"
+                    alt=""
+                    loading="lazy"
+                  />
+                </picture>
+              </a>
+            </div>
+
+            <div class="product" style="left: 40%; top: 70%" tabindex="0">
+              <div class="product__circle"></div>
+              <a class="product__link" href="https://ccc.eu/pl">
+                <span class="product__title">Półbuty DeeZee</span>
+                <span class="product__prize">299,99 zł</span>
+                <span class="product__cta">zobacz</span>
+              </a>
+            </div>
+
+            <header class="gallery__header">
+              <h2 class="gallery__title">Lorem ipsum dolor sit, amet</h2>
+              <span class="gallery__info">Lasocki City Leisure</span>
+              <a href="#" class="gallery__link"
+                ><span class="gallery__cta">Zobacz</span></a
+              >
+            </header>
+          </div>
+        </div>
+        <div class="text-vertical">
+          <p class="text-vertical__paragraph">
+            24H IN COPENHAGEN 24H IN COPENHAGEN 24H IN COPENHAGEN 24H IN
+            COPENHAGEN 24H IN COPENHAGEN 24H IN COPENHAGEN 24H IN COPENHAGEN 24H IN COPENHAGEN 24H IN COPENHAGEN
+          </p>
+        </div>
+      </div>
+
+      <div class="gallery gallery--fullscreen green">
+        <div class="gallery__item gallery__item--m gallery__item--js">
+          <div class="gallery__wrapper gallery__wrapper--js">
+            <a href="#" class="gallery__link">
+              <picture>
+                <source
+                  srcset="images/photo-desktop-1200x1538-1.2c156a0f.jpg"
+                  media="(min-width: 768px)"
+                />
+                <img
+                  class="gallery__image"
+                  src="images/photo-mobile-382-490-1.4cdd37af.jpg"
+                  alt=""
+                  loading="lazy"
+                />
+              </picture>
+            </a>
+          </div>
+
+          <div class="product" style="left: 40%; top: 70%" tabindex="0">
+            <div class="product__circle"></div>
+            <a class="product__link" href="https://ccc.eu/pl">
+              <span class="product__title">Półbuty DeeZee</span>
+              <span class="product__prize">299,99 zł</span>
+              <span class="product__cta">zobacz</span>
+            </a>
+          </div>
+
+          <div class="product" style="left: 70%; top: 75%" tabindex="0">
+            <div class="product__circle"></div>
+            <a class="product__link" href="https://ccc.eu/pl">
+              <span class="product__title">Półbuty DeeZee</span>
+              <span class="product__prize">299,99 zł</span>
+              <span class="product__cta">zobacz</span>
+            </a>
+          </div>
+
+          <div class="product" style="left: 25%; top: 75%" tabindex="0">
+            <div class="product__circle"></div>
+            <a class="product__link" href="https://ccc.eu/pl">
+              <span class="product__title">Półbuty DeeZee</span>
+              <span class="product__prize">299,99 zł</span>
+              <span class="product__cta">zobacz</span>
+            </a>
+          </div>
+
+          <header class="gallery__header">
+            <h2 class="gallery__title">Lorem ipsum dolor sit, amet</h2>
+            <span class="gallery__info">Lasocki City Leisure</span>
+            <a href="#" class="gallery__link"
+              ><span class="gallery__cta">Zobacz</span></a
+            >
+          </header>
+        </div>
+
+        <div class="gallery__item gallery__item--m gallery__item--js">
+          <div class="gallery__wrapper gallery__wrapper--js">
+            <a href="#" class="gallery__link">
+              <picture>
+                <source
+                  srcset="images/photo-desktop-1200x1538-2.ed1edaa8.jpg"
+                  media="(min-width: 768px)"
+                />
+                <img
+                  class="gallery__image"
+                  src="images/photo-mobile-382-490-2.7c5e6af4.jpg"
+                  alt=""
+                  loading="lazy"
+                />
+              </picture>
+            </a>
+          </div>
+
+          <div class="product" style="left: 50%; top: 50%" tabindex="0">
+            <div class="product__circle"></div>
+            <a class="product__link" href="https://ccc.eu/pl">
+              <span class="product__title">Półbuty DeeZee</span>
+              <span class="product__prize">299,99 zł</span>
+              <span class="product__cta">zobacz</span>
+            </a>
+          </div>
+
+          <header class="gallery__header">
+            <h2 class="gallery__title">Consectetur adipisicing elit</h2>
+            <span class="gallery__info">Lasocki City Leisure</span>
+            <a href="#" class="gallery__link"
+              ><span class="gallery__cta">Zobacz</span></a
+            >
+          </header>
+        </div>
+      </div>
+
+      <div class="wrapper">
+        <div class="gallery green four">
+          <div class="gallery__item gallery__item--xs gallery__item--js">
+            <div class="gallery__wrapper gallery__wrapper--js">
+              <a href="#" class="gallery__link">
+                <img
+                  class="gallery__image"
+                  src="images/photo-382x490-a.672.c51a6b8e.jpg"
+                  alt=""
+                  loading="lazy"
+                />
+              </a>
+            </div>
+
+            <header class="gallery__header">
+              <h2 class="gallery__title">Lorem ipsum dolor sit, amet</h2>
+              <span class="gallery__info">Lasocki City Leisure</span>
+              <a href="#" class="gallery__link"
+                ><span class="gallery__cta">Zobacz</span></a
+              >
+            </header>
+          </div>
+
+          <div class="gallery__item gallery__item--xs gallery__item--js">
+            <div class="gallery__wrapper gallery__wrapper--js">
+              <a href="#" class="gallery__link">
+                <img
+                  class="gallery__image"
+                  src="images/photo-382x490-a.672.c51a6b8e.jpg"
+                  alt=""
+                  loading="lazy"
+                />
+              </a>
+            </div>
+
+            <header class="gallery__header">
+              <h2 class="gallery__title">Consectetur adipisicing elit</h2>
+              <span class="gallery__info">Lasocki City Leisure</span>
+              <a href="#" class="gallery__link"
+                ><span class="gallery__cta">Zobacz</span></a
+              >
+            </header>
+          </div>
+
+          <div class="gallery__item gallery__item--xs gallery__item--js yellow">
+            <div class="gallery__wrapper gallery__wrapper--js">
+              <a href="#" class="gallery__link">
+                <img
+                  class="gallery__image"
+                  src="images/photo-382x490-a.672.c51a6b8e.jpg"
+                  alt=""
+                  loading="lazy"
+                />
+              </a>
+            </div>
+
+            <header class="gallery__header">
+              <h2 class="gallery__title">Lorem ipsum dolor sit, amet</h2>
+              <span class="gallery__info">Lasocki City Leisure</span>
+              <a href="#" class="gallery__link"
+                ><span class="gallery__cta">Zobacz</span></a
+              >
+            </header>
+          </div>
+
+          <div class="gallery__item gallery__item--xs gallery__item--js yellow">
+            <div class="gallery__wrapper gallery__wrapper--js">
+              <a href="#" class="gallery__link">
+                <img
+                  class="gallery__image"
+                  src="images/photo-382x490-a.672.c51a6b8e.jpg"
+                  alt=""
+                  loading="lazy"
+                />
+              </a>
+            </div>
+
+            <header class="gallery__header">
+              <h2 class="gallery__title">Consectetur adipisicing elit</h2>
+              <span class="gallery__info">Lasocki City Leisure</span>
+              <a href="#" class="gallery__link"
+                ><span class="gallery__cta">Zobacz</span></a
+              >
+            </header>
+          </div>
+        </div>
+      </div>
+
+      <div class="text">
+        <p class="text__paragraph">
+          24H IN COPENHAGEN 24H IN COPENHAGEN 24H IN COPENHAGEN 24H IN
+          COPENHAGEN 24H IN COPENHAGEN
+        </p>
+      </div>
+
+      <div class="paragraph yellow">
+        <span class="paragraph__span">
+          Damskim, męskim i dziecięcym skórzanym butom nie straszne długie
+          spacery po mieście.  Nie zawiodą Cię w żadnych okolicznościach i
+          pozwolą Ci skupić się na tym, co najważniejsze – na spędzaniu czasu z
+          rodziną. 
+        </span>
+      </div>
+
+      <div class="wrapper-yellow">
+        <div class="gallery yellow">
+          <div class="gallery__item gallery__item--s gallery__item--js">
+            <div class="gallery__wrapper gallery__wrapper--js">
+              <a href="#" class="gallery__link">
+                <picture>
+                  <source
+                    srcset="images/photo-desktop-645x826-1a.27d48de5.jpg"
+                    media="(min-width: 768px)"
+                  />
+                  <img
+                    class="gallery__image"
+                    src="images/photo-mobile-382-490-1a.59d57747.jpg"
+                    alt=""
+                    loading="lazy"
+                  />
+                </picture>
+              </a>
+            </div>
+
+            <div class="product" style="left: 35%; top: 50%" tabindex="0">
+              <div class="product__circle"></div>
+              <a class="product__link" href="https://ccc.eu/pl">
+                <span class="product__title">Półbuty DeeZee</span>
+                <span class="product__prize">299,99 zł</span>
+                <span class="product__cta">zobacz</span>
+              </a>
+            </div>
+
+            <div class="product" style="left: 35%; top: 75%" tabindex="0">
+              <div class="product__circle"></div>
+              <a class="product__link" href="https://ccc.eu/pl">
+                <span class="product__title">Półbuty DeeZee</span>
+                <span class="product__prize">299,99 zł</span>
+                <span class="product__cta">zobacz</span>
+              </a>
+            </div>
+
+            <div class="product" style="left: 55%; top: 75%" tabindex="0">
+              <div class="product__circle"></div>
+              <a class="product__link" href="https://ccc.eu/pl">
+                <span class="product__title">Półbuty DeeZee</span>
+                <span class="product__prize">299,99 zł</span>
+                <span class="product__cta">zobacz</span>
+              </a>
+            </div>
+
+            <header class="gallery__header">
+              <h2 class="gallery__title">Lorem ipsum dolor sit, amet</h2>
+              <span class="gallery__info">Lasocki City Leisure</span>
+              <a href="#" class="gallery__link"
+                ><span class="gallery__cta">Zobacz</span></a
+              >
+            </header>
+          </div>
+
+          <div class="gallery__item gallery__item--s gallery__item--js">
+            <div class="gallery__wrapper gallery__wrapper--js">
+              <a href="#" class="gallery__link">
+                <picture>
+                  <source
+                    srcset="images/photo-desktop-645x826-2b.d6c92c95.jpg"
+                    media="(min-width: 768px)"
+                  />
+                  <img
+                    class="gallery__image"
+                    src="images/photo-mobile-382-490-2b.aff035d5.jpg"
+                    alt=""
+                    loading="lazy"
+                  />
+                </picture>
+              </a>
+            </div>
+
+            <div class="product" style="left: 40%; top: 50%" tabindex="0">
+              <div class="product__circle"></div>
+              <a class="product__link" href="https://ccc.eu/pl">
+                <span class="product__title">Półbuty DeeZee</span>
+                <span class="product__prize">299,99 zł</span>
+                <span class="product__cta">zobacz</span>
+              </a>
+            </div>
+
+            <header class="gallery__header">
+              <h2 class="gallery__title">Consectetur adipisicing elit</h2>
+              <span class="gallery__info">Lasocki City Leisure</span>
+              <a href="#" class="gallery__link"
+                ><span class="gallery__cta">Zobacz</span></a
+              >
+            </header>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery gallery--fullscreen big-yellow">
+        <div class="gallery__item gallery__item--m gallery__item--js">
+          <div class="gallery__wrapper gallery__wrapper--js">
+            <a href="#" class="gallery__link">
+              <picture>
+                <source
+                  srcset="images/photo-desktop-1200x1538-3.fb85393f.jpg"
+                  media="(min-width: 768px)"
+                />
+                <img
+                  class="gallery__image"
+                  src="images/photo-mobile-382-490-3.e9a16aa8.jpg"
+                  alt=""
+                  loading="lazy"
+                />
+              </picture>
+            </a>
+          </div>
+
+          <div class="product" style="left: 40%; top: 65%" tabindex="0">
+            <div class="product__circle"></div>
+            <a class="product__link" href="https://ccc.eu/pl">
+              <span class="product__title">Półbuty DeeZee</span>
+              <span class="product__prize">299,99 zł</span>
+              <span class="product__cta">zobacz</span>
+            </a>
+          </div>
+
+          <div class="product" style="left: 30%; top: 30%" tabindex="0">
+            <div class="product__circle"></div>
+            <a class="product__link" href="https://ccc.eu/pl">
+              <span class="product__title">Półbuty DeeZee</span>
+              <span class="product__prize">299,99 zł</span>
+              <span class="product__cta">zobacz</span>
+            </a>
+          </div>
+
+          
+
+          <header class="gallery__header text-white">
+            <h2 class="gallery__title text-white">
+              Lorem ipsum dolor sit, amet
+            </h2>
+            <span class="gallery__info text-white">Lasocki City Leisure</span>
+            <a href="#" class="gallery__link"
+              ><span class="gallery__cta text-white">Zobacz</span></a
+            >
+          </header>
+        </div>
+
+        <div class="gallery__item gallery__item--m gallery__item--js">
+          <div class="gallery__wrapper gallery__wrapper--js">
+            <a href="#" class="gallery__link">
+              <picture>
+                <source
+                  srcset="images/photo-desktop-1200x1538-4.15b25692.jpg"
+                  media="(min-width: 768px)"
+                />
+                <img
+                  class="gallery__image"
+                  src="images/photo-mobile-382-490-4.7c50f2cc.jpg"
+                  alt=""
+                  loading="lazy"
+                />
+              </picture>
+            </a>
+          </div>
+
+          <div class="product" style="left: 50%; top: 60%" tabindex="0">
+            <div class="product__circle"></div>
+            <a class="product__link" href="https://ccc.eu/pl">
+              <span class="product__title">Półbuty DeeZee</span>
+              <span class="product__prize">299,99 zł</span>
+              <span class="product__cta">zobacz</span>
+            </a>
+          </div>
+
+          <header class="gallery__header text-white">
+            <h2 class="gallery__title text-white">
+              Consectetur adipisicing elit
+            </h2>
+            <span class="gallery__info text-white">Lasocki City Leisure</span>
+            <a href="#" class="gallery__link"
+              ><span class="gallery__cta text-white">Zobacz</span></a
+            >
+          </header>
+        </div>
+      </div>
+
+      <div class="wrapper-big">
+        <div class="gallery gallery--center big">
+          <div class="gallery__item gallery__item--xl">
+            <div class="gallery__wrapper">
+              <a href="#" class="gallery__link">
+                <picture>
+                  <source
+                    srcset="images/desktop-big.f394d788.jpg"
+                    media="(min-width: 768px)"
+                  />
+                  <img
+                    class="gallery__image"
+                    src="images/mobile-big.e62aeeb1.jpg"
+                    alt=""
+                    loading="lazy"
+                  />
+                </picture>
+              </a>
+            </div>
+
+            <div class="product" style="left: 40%; top: 70%" tabindex="0">
+              <div class="product__circle"></div>
+              <a class="product__link" href="https://ccc.eu/pl">
+                <span class="product__title">Półbuty DeeZee</span>
+                <span class="product__prize">299,99 zł</span>
+                <span class="product__cta">zobacz</span>
+              </a>
+            </div>
+
+            <div class="product" style="left:50%; top: 75%" tabindex="0">
+              <div class="product__circle"></div>
+              <a class="product__link" href="https://ccc.eu/pl">
+                <span class="product__title">Półbuty DeeZee</span>
+                <span class="product__prize">299,99 zł</span>
+                <span class="product__cta">zobacz</span>
+              </a>
+            </div>
+
+            <header class="gallery__header">
+              <h2 class="gallery__title" style="color: white">
+                Consectetur adipisicing elit
+              </h2>
+              <span class="gallery__info" style="color: white"
+                >Lasocki City Leisure</span
+              >
+              <a href="#" class="gallery__link"
+                ><span class="gallery__cta" style="color: white"
+                  >Zobacz</span
+                ></a
+              >
+            </header>
+          </div>
+        </div>
+      </div>
+
+      <div class="paragraph pink">
+        <span class="paragraph__span">
+          Zabierz kapsułę Lasocki City Leisure na wędrówki po gwarnych ulicach,
+          przechadzki po parkowych alejkach i podmiejskich, leśnych ścieżkach.
+          Zadbaj o komfort swój i Twoich bliskich. 
+        </span>
+      </div>
+
+      <div class="wrapper" style="background-color: #e19eb0">
+        <div
+          class="gallery green four bottom"
+          style="background-color: #e19eb0"
+        >
+          <div class="gallery__item gallery__item--xs gallery__item--js">
+            <div class="gallery__wrapper gallery__wrapper--js">
+              <a href="#" class="gallery__link">
+                <img
+                  class="gallery__image"
+                  src="images/photo-382x490-a.672.c51a6b8e.jpg"
+                  alt=""
+                  loading="lazy"
+                />
+              </a>
+            </div>
+
+            <header class="gallery__header">
+              <h2 class="gallery__title">Lorem ipsum dolor sit, amet</h2>
+              <span class="gallery__info">Lasocki City Leisure</span>
+              <a href="#" class="gallery__link"
+                ><span class="gallery__cta">Zobacz</span></a
+              >
+            </header>
+          </div>
+
+          <div class="gallery__item gallery__item--xs gallery__item--js">
+            <div class="gallery__wrapper gallery__wrapper--js">
+              <a href="#" class="gallery__link">
+                <img
+                  class="gallery__image"
+                  src="images/photo-382x490-a.672.c51a6b8e.jpg"
+                  alt=""
+                  loading="lazy"
+                />
+              </a>
+            </div>
+
+            <header class="gallery__header">
+              <h2 class="gallery__title">Consectetur adipisicing elit</h2>
+              <span class="gallery__info">Lasocki City Leisure</span>
+              <a href="#" class="gallery__link"
+                ><span class="gallery__cta">Zobacz</span></a
+              >
+            </header>
+          </div>
+
+          <div class="gallery__item gallery__item--xs gallery__item--js">
+            <div class="gallery__wrapper gallery__wrapper--js">
+              <a href="#" class="gallery__link">
+                <img
+                  class="gallery__image"
+                  src="images/photo-382x490-a.672.c51a6b8e.jpg"
+                  alt=""
+                  loading="lazy"
+                />
+              </a>
+            </div>
+
+            <header class="gallery__header">
+              <h2 class="gallery__title">Lorem ipsum dolor sit, amet</h2>
+              <span class="gallery__info">Lasocki City Leisure</span>
+              <a href="#" class="gallery__link"
+                ><span class="gallery__cta">Zobacz</span></a
+              >
+            </header>
+          </div>
+
+          <div class="gallery__item gallery__item--xs gallery__item--js">
+            <div class="gallery__wrapper gallery__wrapper--js">
+              <a href="#" class="gallery__link">
+                <img
+                  class="gallery__image"
+                  src="images/photo-382x490-a.672.c51a6b8e.jpg"
+                  alt=""
+                  loading="lazy"
+                />
+              </a>
+            </div>
+
+            <header class="gallery__header">
+              <h2 class="gallery__title">Consectetur adipisicing elit</h2>
+              <span class="gallery__info">Lasocki City Leisure</span>
+              <a href="#" class="gallery__link"
+                ><span class="gallery__cta">Zobacz</span></a
+              >
+            </header>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery gallery--fullscreen normal">
+        <div class="gallery__item gallery__item--m gallery__item--js">
+          <div class="gallery__wrapper gallery__wrapper--js">
+            <a href="#" class="gallery__link">
+              <picture>
+                <source
+                  srcset="images/photo-desktop-1200x1538-5.fa27cf4a.jpg"
+                  media="(min-width: 768px)"
+                />
+                <img
+                  class="gallery__image"
+                  src="images/photo-mobile-382-490-5.50e4a7b4.jpg"
+                  alt=""
+                  loading="lazy"
+                />
+              </picture>
+            </a>
+          </div>
+
+          <div class="product" style="left:40%; top: 66%" tabindex="0">
+            <div class="product__circle"></div>
+            <a class="product__link" href="https://ccc.eu/pl">
+              <span class="product__title">Półbuty DeeZee</span>
+              <span class="product__prize">299,99 zł</span>
+              <span class="product__cta">zobacz</span>
+            </a>
+          </div>
+
+          <div class="product" style="left:80%; top: 66%" tabindex="0">
+            <div class="product__circle"></div>
+            <a class="product__link" href="https://ccc.eu/pl">
+              <span class="product__title">Półbuty DeeZee</span>
+              <span class="product__prize">299,99 zł</span>
+              <span class="product__cta">zobacz</span>
+            </a>
+          </div>
+
+          <header class="gallery__header">
+            <h2 class="gallery__title">Lorem ipsum dolor sit, amet</h2>
+            <span class="gallery__info t">Lasocki City Leisure</span>
+            <a href="#" class="gallery__link"
+              ><span class="gallery__cta">Zobacz</span></a
+            >
+          </header>
+        </div>
+
+        <div class="gallery__item gallery__item--m gallery__item--js">
+          <div class="gallery__wrapper gallery__wrapper--js">
+            <a href="#" class="gallery__link">
+              <picture>
+                <source
+                  srcset="images/photo-desktop-1200x1538-6.9bf2e5c5.jpg"
+                  media="(min-width: 768px)"
+                />
+                <img
+                  class="gallery__image"
+                  src="images/photo-mobile-382-490-6.f00d7941.jpg"
+                  alt=""
+                  loading="lazy"
+                />
+              </picture>
+            </a>
+          </div>
+
+          <div class="product" style="left:40%; top: 50%" tabindex="0">
+            <div class="product__circle"></div>
+            <a class="product__link" href="https://ccc.eu/pl">
+              <span class="product__title">Półbuty DeeZee</span>
+              <span class="product__prize">299,99 zł</span>
+              <span class="product__cta">zobacz</span>
+            </a>
+          </div>
+
+          <header class="gallery__header">
+            <h2 class="gallery__title">Consectetur adipisicing elit</h2>
+            <span class="gallery__info">Lasocki City Leisure</span>
+            <a href="#" class="gallery__link"
+              ><span class="gallery__cta">Zobacz</span></a
+            >
+          </header>
+        </div>
+      </div>
+
+      <div class="button">
+        <a class="button__link" href="#">Zobacz produkty</a>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        var scrollAnimationItems = document.querySelectorAll('.product--js');
+        var animationStartDistance = 0;
+        var animationStartClassName = 'product--before';
+        var getRandomNumber = (min, max) =>
+          Math.floor(Math.random() * (max - min + 1)) + min;
+        var animationOnScroll = () => {
+          scrollAnimationItems.forEach((item) => {
+            var itemTop = item.getBoundingClientRect().top;
+            var itemBottom = item.getBoundingClientRect().bottom;
+            var windowHeight = window.innerHeight;
+            item.style.transitionDelay = `0.${getRandomNumber(0, 5)}s`;
+            if (
+              itemTop - windowHeight < 0 - animationStartDistance &&
+              itemBottom > animationStartDistance
+            ) {
+              item.classList.remove(animationStartClassName);
+            } else {
+              item.classList.add(animationStartClassName);
+            }
+          });
+        };
+        window.addEventListener('scroll', animationOnScroll);
+        window.addEventListener('load', animationOnScroll);
+        window.addEventListener('resize', animationOnScroll);
+      })();
+    </script>
+    <script>
+      (function () {
+        var galleryItems = document.querySelectorAll('.gallery__item--js');
+
+        function menageClasses(tooltip, imageWrapper) {
+          var tooltipRightPosition =
+            tooltip.getBoundingClientRect().x +
+            tooltip.getBoundingClientRect().width;
+          var imageWrapperBottomPosition =
+            imageWrapper.getBoundingClientRect().y +
+            imageWrapper.getBoundingClientRect().height;
+          var tooltipBottomPosition =
+            tooltip.getBoundingClientRect().y +
+            tooltip.getBoundingClientRect().height;
+          if (tooltipRightPosition > window.innerWidth) {
+            tooltip.classList.add('product__link--left');
+          }
+          if (tooltipBottomPosition > imageWrapperBottomPosition) {
+            tooltip.classList.add('product__link--top');
+          }
+        }
+
+        function setTooltipPosition(product, imageWrapper) {
+          var tooltip = product.querySelector('.product__link--js');
+          product.addEventListener('click', function () {
+            menageClasses(tooltip, imageWrapper);
+          });
+          product.addEventListener('mouseover', function () {
+            menageClasses(tooltip, imageWrapper);
+          });
+        }
+        galleryItems.forEach(function (galleryItem) {
+          var imageWrapper = galleryItem.querySelector('.gallery__wrapper--js');
+          var products = galleryItem.querySelectorAll('.product--js');
+          products.forEach(function (product) {
+            setTooltipPosition(product, imageWrapper);
+          });
+        });
+      })();
+    </script>
+
+    <script src="https://player.vimeo.com/api/player.js"></script>
+
+    <script>
+      // waitForElement('.c-header', function () {
+      (function () {
+        var mainVideo = document.querySelector('.main-video--js');
+        var player = new Vimeo.Player(mainVideo);
+        var audioBtn = document.querySelector('.header__audio-btn');
+        var audioIconOff = document.querySelector(
+          '.header__audio-btn-icon-off',
+        );
+        var audioIconOn = document.querySelector('.header__audio-btn-icon-on');
+
+        player.setVolume(0);
+
+        audioBtn.addEventListener('click', function () {
+          player.getVolume().then(function (volume) {
+            if (volume !== 0) {
+              player.setVolume(0);
+              audioIconOn.style.opacity = '0';
+              audioIconOff.style.opacity = '1';
+            } else {
+              player.setVolume(1);
+              audioIconOn.style.opacity = '1';
+              audioIconOff.style.opacity = '0';
+            }
+          });
+        });
+
+        var scrollbarWidth = window.innerWidth - document.body.clientWidth;
+        if (navigator.appVersion.indexOf('Win') != -1) {
+          document.body.style.setProperty(
+            '--scrollbarWidth',
+            `${scrollbarWidth}px`,
+          );
+        } else {
+          document.body.style.setProperty('--scrollbarWidth', `0px`);
+        }
+      })();
+      // });
+
+      function waitForElement(elementId, callBack) {
+        window.setTimeout(function () {
+          var element = document.querySelectorAll(elementId);
+          if (element.length) {
+            callBack(elementId, element);
+          } else {
+            waitForElement(elementId, callBack);
+          }
+        }, 200);
+      }
+    </script>
+  <script defer></script></body>
+</html>
